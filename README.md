@@ -26,7 +26,7 @@ cas:
     CASAuthenticationEntryPointImpl.java
     CasSecurityConfig.java
     CasProperties.java
-3)、启动模块增加重定向前端
+3)、auth启动模块增加重定向前端
        @RequestMapping("/")
        public void index(HttpServletResponse response) throws IOException {
            System.out.println("-----------"+response.getStatus());
@@ -47,7 +47,7 @@ cas:
         return ajax;
     }
 
-   修改logout方法，将url路径:logout改为TokenLogout,默认登出方法不能登出，此处在清理了token等缓存信息后，前端页面会
+  TokenController: 修改logout方法，将url路径:logout改为TokenLogout,默认登出方法不能登出，此处在清理了token等缓存信息后，前端页面会
 重新调用cas登出方法。
 
 # 3、gateway增加白名单---nacos  ruoyi-gateway-dev.yml
