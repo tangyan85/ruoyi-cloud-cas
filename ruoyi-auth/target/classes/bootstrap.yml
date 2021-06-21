@@ -1,0 +1,41 @@
+# Tomcat
+server: 
+  port: 9200
+
+# Spring
+spring: 
+  application:
+    # 应用名称
+    name: ruoyi-auth
+  profiles:
+    # 环境配置
+    active: dev
+  cloud:
+    nacos:
+      discovery:
+        # 服务注册地址
+        server-addr: 127.0.0.1:8848
+      config:
+        # 配置中心地址
+        server-addr: 127.0.0.1:8848
+        # 配置文件格式
+        file-extension: yml
+        # 共享配置
+        shared-configs:
+          - application-${spring.profiles.active}.${spring.cloud.nacos.config.file-extension}
+app:
+  login:
+    url: /login
+  logout:
+    url: /logout
+  server:
+    host:
+      url: http://localhost:9200
+  #配死了？
+cas:
+  server:
+    host:
+      login_url: ${cas.server.host.url}/login
+      logout_url: ${cas.server.host.url}/logout?service=${app.server.host.url}
+      #url: http://sso.htffund.com.cn:8008/cas
+      url: http://localhost:8081/cas
