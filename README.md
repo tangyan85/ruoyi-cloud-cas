@@ -2,6 +2,7 @@
 
 ```bash
 后端配置
+# 0、数据库配置请自行改配置
 # 1、auth模块 bootstrap.yml配置cas
 #我的cas时搭建在本地的,端口8081,修改了以支持http访问（具体请自行百度），同时将cas用户改为admin::admin123
 cas:
