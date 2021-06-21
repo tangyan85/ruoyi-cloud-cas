@@ -20,7 +20,7 @@ cas:
             <artifactId>spring-security-cas</artifactId>
             <version>5.0.4.RELEASE</version>
         </dependency>
-2）、新增cas代码
+2）、新增cas代码---覆盖代码
     CASAuthenticationEntryPointImpl.java
     CasSecurityConfig.java
     CasProperties.java
