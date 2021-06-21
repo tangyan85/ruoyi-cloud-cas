@@ -62,7 +62,7 @@ cas:
 
 
 
-前端配置
+前端配置---请直接复制拷贝
    1、permission.js
    2、user.js增加casLogin、casLogout
    3、login.js增加casLogin
